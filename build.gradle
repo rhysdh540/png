@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'dev.rdh'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor compileOnly("org.projectlombok:lombok:1.18.28")
+}
