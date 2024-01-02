@@ -1,20 +1,18 @@
 package dev.rdh.png.io;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
+import java.io.IOException;
 
 public class ByteInputStream extends DataInputStream {
 	public ByteInputStream(byte[] data) {
-		super(new ByteArrayInputStream(data));
+		super(new BufferedInputStream(new ByteArrayInputStream(data)));
 	}
 
-	public byte[] read(int length) {
+	public String readString(int length) throws IOException {
 		byte[] bytes = new byte[length];
-		try {
-			readFully(bytes);
-		} catch(Exception e) {
-			throw new RuntimeException(e);
-		}
-		return bytes;
+		readFully(bytes);
+		return new String(bytes);
 	}
 }

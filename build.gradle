@@ -11,4 +11,5 @@ repositories {
 
 dependencies {
     annotationProcessor compileOnly("org.projectlombok:lombok:1.18.28")
+    compileOnly("org.jetbrains:annotations:24.1.0")
 }

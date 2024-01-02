@@ -1,4 +1,4 @@
-package dev.rdh.png;
+package dev.rdh.png.util;
 
 import lombok.Getter;
 
@@ -17,7 +17,7 @@ public enum BitDepth {
 	}
 
 	public static BitDepth fromValue(int value) {
-		for (BitDepth bitDepth : values()) {
+		for (BitDepth bitDepth : BitDepth.values()) {
 			if (bitDepth.value == value) {
 				return bitDepth;
 			}
