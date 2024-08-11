@@ -22,4 +22,16 @@ public class ByteOutputStream extends DataOutputStream {
 		flush();
 		return baos.toByteArray();
 	}
+
+	@Override
+	public void close() throws IOException {
+		super.close();
+		baos.close();
+	}
+
+	@Override
+	public void flush() throws IOException {
+		super.flush();
+		baos.flush();
+	}
 }

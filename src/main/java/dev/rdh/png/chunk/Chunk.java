@@ -37,6 +37,15 @@ public class Chunk {
 			if(chunk.crc() != crc) {
 				throw new IOException("CRC mismatch");
 			}
+
+			if(chunk.getType().isPublic()) {
+				switch(chunk.getType().toString()) {
+					case "IHDR": return new Header(data);
+					case "IDAT": return new Data(data);
+					case "IEND": return new End();
+				}
+			}
+
 			return chunk;
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);

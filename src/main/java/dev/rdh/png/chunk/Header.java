@@ -85,7 +85,7 @@ public final class Header extends Chunk {
 		try(ByteOutputStream out = new ByteOutputStream(HEADER_LENGTH)) {
 			out.writeInt(width);
 			out.writeInt(height);
-			out.write(bitDepth.getValue());
+			out.write(bitDepth.getBytesPerPixel());
 			out.write(colorType.getValue());
 			out.write(COMPRESSION_METHOD);
 			out.write(FILTER_METHOD);

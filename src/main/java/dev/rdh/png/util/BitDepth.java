@@ -10,15 +10,15 @@ public enum BitDepth {
 	EIGHT(8),
 	SIXTEEN(16);
 
-	private final int value;
+	private final byte bytesPerPixel;
 
 	BitDepth(int value) {
-		this.value = value;
+		this.bytesPerPixel = (byte) value;
 	}
 
 	public static BitDepth fromValue(int value) {
 		for (BitDepth bitDepth : BitDepth.values()) {
-			if (bitDepth.value == value) {
+			if (bitDepth.bytesPerPixel == value) {
 				return bitDepth;
 			}
 		}
